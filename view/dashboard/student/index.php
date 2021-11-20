@@ -3,14 +3,27 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <ul class="nav nav-pills nav-fill">
+                <style>
+                    .link-text-red {
+                        color: #bd2130;
+                    }
+
+                    .link-text-red:hover {
+                        color: #bd2130;
+                    }
+
+                    .nav-item>.active {
+                        background-color: #bd2130 !important;
+                    }
+                </style>
                 <li class="nav-item">
-                    <a onclick="return tabChanger()" class="nav-link active" href="#profile">Profile</a>
+                    <a onclick="return tabChanger()" class="nav-link link-text-red" href="#profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="return tabChanger()" class="nav-link " href="#appointments">Appointment</a>
+                    <a onclick="return tabChanger()" class="nav-link link-text-red" href="#appointments">Appointment</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="return tabChanger()" class="nav-link" href="#history">History</a>
+                    <a onclick="return tabChanger()" class="nav-link active link-text-red active-updated " href="#history">History</a>
                 </li>
             </ul>
         </div>
@@ -43,7 +56,7 @@
                     <input type="text" maxlength="1" class="form-control form-control-lg" placeholder="section" name="section" required />
                 </div>
                 <div id="profile-content" class="error-message"></div>
-                <input type="submit" class="btn btn-info btn-block mt-4" name="update" value="Update" />
+                <input type="submit" class="btn  btn-danger btn-block mt-4 disabled" name="update" value="Update" />
             </form>
         </div>
     </div>

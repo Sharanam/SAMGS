@@ -36,7 +36,7 @@ require './common/navbar.php';
             <input type="password" class="form-control form-control-lg" placeholder="Password" name="password" minlength="8" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" />
           </div>
           <div id="content" class="error-message"></div>
-          <input type="submit" class="btn btn-info btn-block mt-4" name="register" />
+          <input type="submit" class="btn  btn-danger btn-block mt-4" name="register" value="Register" />
         </form>
       </div>
     </div>

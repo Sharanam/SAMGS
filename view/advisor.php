@@ -33,7 +33,7 @@ require './common/navbar.php';
                         unset($_SESSION["errorMessage"]);
                     }
                     ?>
-                    <input type="submit" class="btn btn-info btn-block mt-4" name="login" />
+                    <input type="submit" class="btn  btn-danger btn-block mt-4" name="login" value="Login" />
                 </form>
             </div>
         </div>
