@@ -4,7 +4,7 @@
       Contact us at:<br />
       E-mail: <a href="mailto: abc@gmail.com">abc@gmail.com</a><br />
       Phone: 6783452678<br />
-      Address: Lorem ipsum dolor sit amet.
+      Address: """Some Address""".
     </div>
     <div style="display: flex;flex-direction: column;">
       <a class="nav-link" href="../index.php?type=admin&act=login">Admin</a> <br />
