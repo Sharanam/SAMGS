@@ -29,8 +29,8 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row tab-items d-block" id="profile">
+<div class="container my-4">
+    <div class="row tab-items d-none" id="profile">
         <button class="d-none" onclick="getProfile()">Profile</button>
         <div class="col-md-8 m-auto">
             <h1 class="display-4 text-center">Update Profile</h1>
@@ -74,11 +74,21 @@
             </p>
         </div>
     </div>
-    <div class="row tab-items d-none" id="history">
+    <div class="row tab-items d-block" id="history">
         <button class="d-none" onclick="getHistory()">Profile</button>
-        <div id="historyView">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th scope="col">ID</th> -->
+                    <!-- <th scope="col">Student's E-mail</th> -->
+                    <th scope="col">Advisor's E-mail</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="historyView" class="text-capitalize">
 
-            <!-- <p> only API for history will be used and shown here </p> -->
-        </div>
+            </tbody>
+        </table>
     </div>
 </div>

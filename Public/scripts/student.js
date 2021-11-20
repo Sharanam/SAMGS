@@ -53,5 +53,33 @@ function setProfile(event) {
     xhttp.send(new FormData(document.getElementById('profileForm')));
 }
 
+function getHistory() {
+    document.getElementById("historyView").innerHTML = "Waiting...";
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            if (!data.res) {
+                document.getElementById("historyView").innerHTML = "No History Found";
+                return false;
+            }
+            data = data.data;
+            let html = "";
+            for (let i = 0; i < data.length; i++) {
+                html += "<tr>";
+                // html += "<th scope=\"row\">" + data[i].id + "</th>";
+                // html += "<td>" + data[i].student_email + "</td>";
+                html += "<td>" + data[i].advisor_email + "</td>";
+                html += "<td>" + data[i].description + "</td>";
+                html += "<td>" + data[i].timestamp + "</td>";
+                html += "</tr>";
+            }
+            document.getElementById("historyView").innerHTML = html;
+        }
+    };
+    xhttp.open("GET", "../index.php?type=student&act=history", true);
+    xhttp.send();
+}
+
 // on page load
 document.getElementById(document.getElementsByClassName("active")[0].href.split("#")[1]).children[0].click()
