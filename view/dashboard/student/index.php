@@ -87,15 +87,6 @@
 
                 </tbody>
             </table>
-            <p>
-                Appointments will be shown here
-                <br />
-                For that, 3 APIs - book and manage appointments
-                <br />
-                (+1 to get list of advisors)
-                <br />
-                Pop-up in appointment
-            </p>
         </div>
     </div>
     <div class="row tab-items d-none" id="history">
