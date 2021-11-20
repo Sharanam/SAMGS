@@ -43,7 +43,7 @@
                     <input type="text" maxlength="1" class="form-control form-control-lg" placeholder="section" name="section" required />
                 </div>
                 <div id="profile-content" class="error-message"></div>
-                <input type="submit" class="btn btn-info btn-block mt-4" name="update" />
+                <input type="submit" class="btn btn-info btn-block mt-4" name="update" value="Update" />
             </form>
         </div>
     </div>
