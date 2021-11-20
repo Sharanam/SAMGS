@@ -10,10 +10,10 @@
                     <a onclick="return tabChanger()" class="nav-link link-text-red" href="#profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="return tabChanger()" class="nav-link link-text-red" href="#appointments">Appointment</a>
+                    <a onclick="return tabChanger()" class="nav-link link-text-red active active-updated" href="#appointments">Appointment</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="return tabChanger()" class="nav-link active link-text-red active-updated " href="#history">History</a>
+                    <a onclick="return tabChanger()" class="nav-link link-text-red" href="#history">History</a>
                 </li>
             </ul>
         </div>
@@ -50,9 +50,43 @@
             </form>
         </div>
     </div>
-    <div class="row tab-items d-none" id="appointments">
-        <button class="d-none" onclick="getAppointments()">Profile</button>
-        <div id="appointmentView">
+    <div class="row tab-items d-block" id="appointments">
+        <button class="d-none" onclick="getAppointments()">Appointment</button>
+        <div class="col-md-8 m-auto">
+            <div class="border border-danger rounded p-3 mb-3">
+                <h1 class="display-4 text-center">New Appointment</h1>
+                <form onsubmit="makeAppointments(event)" id='appointmentForm'>
+                    <div class="form-group">
+                        <label for="advisor_email">Advisor's E-mail</label>
+                        <!-- <input type="email" class="form-control form-control-lg" placeholder="advisor_email" name="advisor_email" required /> -->
+                        <select class="form-control" name="advisor_email" id="advisor_email" onclick="getAllAdvisors()">
+                            <option disabled selected value="">Select Advisor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="description" name="description" required />
+                    </div>
+                    <input type="submit" class="btn  btn-danger btn-block mt-4" name="make" value="Make Appointment" />
+                </form>
+            </div>
+            <h1 class="display-4 text-center mt-4">Appointments</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="text-center">
+                        <!-- <th scope="col">ID</th> -->
+                        <!-- <th scope="col">Student's E-mail</th> -->
+                        <th scope="col">Advisor's E-mail</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Cancel</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentView" class="text-capitalize">
+
+                </tbody>
+            </table>
             <p>
                 Appointments will be shown here
                 <br />
@@ -64,11 +98,11 @@
             </p>
         </div>
     </div>
-    <div class="row tab-items d-block" id="history">
-        <button class="d-none" onclick="getHistory()">Profile</button>
+    <div class="row tab-items d-none" id="history">
+        <button class="d-none" onclick="getHistory()">History</button>
         <table class="table table-striped">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <!-- <th scope="col">ID</th> -->
                     <!-- <th scope="col">Student's E-mail</th> -->
                     <th scope="col">Advisor's E-mail</th>

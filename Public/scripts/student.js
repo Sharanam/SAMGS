@@ -53,6 +53,96 @@ function setProfile(event) {
     xhttp.send(new FormData(document.getElementById('profileForm')));
 }
 
+function getAppointments() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            if (!data.res) {
+                document.getElementById("appointmentView").innerHTML = "<p class='text-center'>No Appoitment Found.</p>";
+                return false;
+            }
+            data = data.data;
+            let html = "";
+            for (let i = 0; i < data.length; i++) {
+                html += "<tr>";
+                // html += "<th scope=\"row\">" + data[i].id + "</th>";
+                // html += "<td>" + data[i].student_email + "</td>";
+                html += "<td>" + data[i].advisor_email + "</td>";
+                html += "<td>" + data[i].description + "</td>";
+                html += "<td>" + data[i].status + "</td>";
+                html += "<td>" + data[i].timestamp + "</td>";
+                html += "<td>" + (data[i].status !== "cancelled by student" ? '<button class="btn btn-danger" onclick="cancelAppointment(event)" value=' + data[i].id + '>Cancel</button>' : "") + "</td>";
+                html += "</tr>";
+            }
+            document.getElementById("appointmentView").innerHTML = html;
+        }
+    };
+    xhttp.open("GET", "../index.php?type=student&act=appointment", true);
+    xhttp.send();
+}
+
+function makeAppointments(event) {
+    event.preventDefault();
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(this.responseText);
+            if (res.res) {
+                alert("Your appointment has been scheduled.");
+                getAppointments();
+            } else {
+                alert("Something went wrong.");
+            }
+        }
+    };
+    xhttp.open("POST", "../index.php?type=student&act=appointment", true);
+    xhttp.send(new FormData(document.getElementById('appointmentForm')));
+}
+
+function cancelAppointment(event) {
+    event.preventDefault();
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(this.responseText);
+            if (res.res) {
+                alert("Appointment Cancelled.");
+                getAppointments();
+            } else {
+                alert("Something went wrong.");
+            }
+        }
+    }
+    xhttp.open("POST", "../index.php?type=student&act=appointment", true);
+    let d = new FormData()
+    d.append("id", event.target.value)
+    xhttp.send(d);
+}
+
+function getAllAdvisors() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            if (!data.res) {
+                document.getElementById("advisor_email").innerHTML = "<option disabled selected value=''>No Advisor Found.</option>";
+                return false;
+            }
+            data = data.data;
+            console.log(data);
+            let html = "";
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].availability)
+                    html += "<option>" + data[i].email + "</option>";
+            }
+            document.getElementById("advisor_email").innerHTML = html;
+        }
+    }
+    xhttp.open("GET", "../index.php?type=advisor&act=getAll", true);
+    xhttp.send();
+}
+
 function getHistory() {
     document.getElementById("historyView").innerHTML = "Waiting...";
     let xhttp = new XMLHttpRequest();
