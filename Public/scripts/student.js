@@ -5,11 +5,11 @@ function tabChanger() {
     for (var i = 0; i < d.length; i++) {
         d[i].classList.remove("active");
         d[i].classList.remove("active-updated");
-        event.target.classList.add("link-text-red");
+        d[i].classList.add("link-text-red");
     }
     event.target.classList.add("active");
     event.target.classList.add("active-updated");
-    d[i].classList.remove("link-text-red");
+    event.target.classList.remove("link-text-red");
 
     // respective content change
     d = document.getElementsByClassName('tab-items');

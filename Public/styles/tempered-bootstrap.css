@@ -1,0 +1,11 @@
+.link-text-red {
+    color: #bd2130;
+}
+
+.link-text-red:hover {
+    color: #bd2130;
+}
+
+.nav-item>.active {
+    background-color: #bd2130 !important;
+}

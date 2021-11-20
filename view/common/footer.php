@@ -2,16 +2,16 @@
   <div class="footer-details">
     <div style="text-align: start;">
       Contact us at:<br />
-      E-mail: <a href="mailto: abc@gmail.com">abc@gmail.com</a><br />
+      E-mail: <a href="mailto: abc@gmail.com" class="text-danger ">abc@gmail.com</a><br />
       Phone: 6783452678<br />
       Address: """Some Address""".
     </div>
     <div style="display: flex;flex-direction: column;">
-      <a class="nav-link" href="../index.php?type=admin&act=login">Admin</a> <br />
-      <a class="nav-link" href="../index.php?type=advisor&act=login">Advisor</a>
+      <a class="text-danger nav-link" href="../index.php?type=admin&act=login">Admin</a> <br />
+      <a class="text-danger nav-link" href="../index.php?type=advisor&act=login">Advisor</a>
     </div>
   </div>
-  Copyright &copy; 2021 My Company
+  Copyright &copy; 2021 My Company. All Rights Reserved.
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
