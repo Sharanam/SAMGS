@@ -67,7 +67,7 @@ class AdvisorModel
     {
         try {
             $this->open_db();
-            $query = $this->condb->prepare("SELECT * FROM advisor");
+            $query = $this->condb->prepare("SELECT email, name, availability FROM advisor");
             $query->execute();
             $result = $query->get_result();
             $array = mysqli_fetch_all($result, MYSQLI_ASSOC);

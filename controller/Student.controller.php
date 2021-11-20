@@ -161,7 +161,7 @@ class StudentController
                 echo json_encode(array("res" => 0));
                 return;
             }
-            if ($_POST["id"]) {
+            if (isset($_POST["id"])) {
                 $id = $_POST["id"];
                 $result = $this->appointment->matchStudentAndId($userDetails->email, $id);
                 if (!$result) {
