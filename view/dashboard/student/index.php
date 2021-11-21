@@ -23,7 +23,7 @@
     <div class="row tab-items d-none" id="profile">
         <button class="d-none" onclick="getProfile()">Profile</button>
         <div class="col-md-8 m-auto">
-            <h1 class="display-4 text-center">Update Profile</h1>
+            <!-- <h1 class="display-4 text-center">Profile</h1> -->
             <form onsubmit="setProfile(event)" id='profileForm'>
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -54,7 +54,7 @@
         <button class="d-none" onclick="getAppointments()">Appointment</button>
         <div class="col-md-8 m-auto">
             <div class="border border-danger rounded p-3 mb-3">
-                <h1 class="display-4 text-center">New Appointment</h1>
+                <!-- <h1 class="display-4 text-center">New Appointment</h1> -->
                 <form onsubmit="makeAppointments(event)" id='appointmentForm'>
                     <div class="form-group">
                         <label for="advisor_email">Advisor's E-mail</label>
@@ -76,10 +76,10 @@
                     <tr class="text-center">
                         <!-- <th scope="col">ID</th> -->
                         <!-- <th scope="col">Student's E-mail</th> -->
-                        <th scope="col">Advisor's E-mail</th>
+                        <th scope="col">Advisor</th>
                         <th scope="col">Description</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Timestamp</th>
+                        <th scope="col">Date & Time</th>
                         <th scope="col">Cancel</th>
                     </tr>
                 </thead>
@@ -91,14 +91,15 @@
     </div>
     <div class="row tab-items d-none" id="history">
         <button class="d-none" onclick="getHistory()">History</button>
+        <!-- <h1 class="display-4 text-center">History</h1> -->
         <table class="table table-striped">
             <thead>
                 <tr class="text-center">
                     <!-- <th scope="col">ID</th> -->
                     <!-- <th scope="col">Student's E-mail</th> -->
-                    <th scope="col">Advisor's E-mail</th>
+                    <th scope="col">Advisor</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Timestamp</th>
+                    <th scope="col">Date & Time</th>
                 </tr>
             </thead>
             <tbody id="historyView" class="text-capitalize">

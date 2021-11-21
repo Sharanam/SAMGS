@@ -68,7 +68,7 @@ function getAppointments() {
                 html += "<tr>";
                 // html += "<th scope=\"row\">" + data[i].id + "</th>";
                 // html += "<td>" + data[i].student_email + "</td>";
-                html += "<td>" + data[i].advisor_email + "</td>";
+                html += "<td>" + (data[i].advisor_email === "null" ? "-" : data[i].advisor_email) + "</td>";
                 html += "<td>" + data[i].description + "</td>";
                 html += "<td>" + data[i].status + "</td>";
                 html += "<td>" + data[i].timestamp + "</td>";
@@ -159,7 +159,7 @@ function getHistory() {
                 html += "<tr>";
                 // html += "<th scope=\"row\">" + data[i].id + "</th>";
                 // html += "<td>" + data[i].student_email + "</td>";
-                html += "<td>" + data[i].advisor_email + "</td>";
+                html += "<td>" + (/^null$/i.test(data[i].advisor_email) ? "-" : data[i].advisor_email) + "</td>";
                 html += "<td>" + data[i].description + "</td>";
                 html += "<td>" + data[i].timestamp + "</td>";
                 html += "</tr>";
