@@ -4,7 +4,7 @@
         <div class="col-md-12 text-center">
             <ul class="nav nav-pills nav-fill">
                 <style>
-                    <?php require '../public/styles/tempered-bootstrap.css'; ?>
+                    <?php include '../public/styles/tempered-bootstrap.css'; ?>
                 </style>
                 <li class="nav-item">
                     <a onclick="return tabChanger()" class="nav-link link-text-red" href="#profile">Profile</a>
